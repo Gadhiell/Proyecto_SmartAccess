@@ -23,3 +23,9 @@ Construir una plataforma que:
 ## Paleta de colores utilizada
 <img width="889" height="268" alt="image" src="https://github.com/user-attachments/assets/a4cf1b00-bc65-493e-9e13-49d9c1d88889" />
 
+
+
+## Kit tecnológico utilizado
+<img width="551" height="339" alt="image" src="https://github.com/user-attachments/assets/5ea8f750-c54a-4a89-834f-3c61db45de1c" />
+
+
