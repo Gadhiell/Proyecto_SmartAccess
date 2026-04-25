@@ -20,4 +20,6 @@ Construir una plataforma que:
 - Ofrezca herramientas de auditoría y control en tiempo real.
 
 ---
-**resumen preliminar**
+## Paleta de colores utilizada
+<img width="889" height="268" alt="image" src="https://github.com/user-attachments/assets/a4cf1b00-bc65-493e-9e13-49d9c1d88889" />
+
