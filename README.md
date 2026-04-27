@@ -1,5 +1,8 @@
 # SeguriX
 
+## Logo de SeguriX
+<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/4917e1f9-e6be-4ad6-a144-f115df95885f" />
+
 ## Descripción
 **SeguriX** es una plataforma centralizada diseñada para la administración de seguridad en edificios corporativos y residenciales.  
 Su propósito es registrar y gestionar los flujos de entrada y salida de distintos tipos de usuarios (empleados, residentes, visitas, proveedores), ofreciendo una visión clara y confiable del acceso en tiempo real.
