@@ -29,6 +29,10 @@ Construir una plataforma que:
 
 
 ## Kit tecnológico utilizado
+
+## **Diagrama UML**
+[diagrama uml.pdf](https://github.com/user-attachments/files/27138324/diagrama.uml.pdf)
+
 <img width="551" height="339" alt="image" src="https://github.com/user-attachments/assets/5ea8f750-c54a-4a89-834f-3c61db45de1c" />
 
 
