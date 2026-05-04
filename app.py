@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, send_from_directory
 
-app = Flask(__name__, static_folder='.')
+app = Flask(__name__)
 
 #"Base de datos"
 logs = []
@@ -16,12 +16,12 @@ def validar_acceso(usuario_id):
     usuario = usuarios.get(usuario_id)
 
     if not usuario:
-        return False, "Usuario no existe"
+        return False, "inactivo"
 
     if not usuario["activo"]:
-        return False, "Usuario inactivo"
+        return False, "inactivo"
 
-    return True, "Acceso permitido"
+    return True, "activo"
 
 
 #Rutas para la pagina
@@ -33,7 +33,10 @@ def home():
 def logo():
     return send_from_directory(".", "logo.png")
 
-#Siguiente pagina, el panel
+@app.route('/Wordmark.png')
+def Wordmark():
+    return send_from_directory(".", "Wordmark.png")
+
 @app.route("/panel")
 def panel():
     return send_from_directory(".", "panel.html")
@@ -48,12 +51,12 @@ def acceso():
     usuario_id = data.get("usuario_id")
     metodo = data.get("metodo")
 
-    permitido, mensaje = validar_acceso(usuario_id)
+    permitido, estado = validar_acceso(usuario_id)
 
     log = {
         "usuario_id": usuario_id,
         "metodo": metodo,
-        "estado": mensaje
+        "estado": estado
     }
 
     logs.append(log)

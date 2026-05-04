@@ -3,36 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Panel SeguriX</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
 
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="nav-left">
+        <img src="/static/logo.png" class="nav-logo">
+        <img src="/static/Wordmark.png" class="nav-Wordmark">
+    </div>
+</div>
+
 <div class="panel-container">
 
-    <h1>Panel de Acceso</h1>
+    <!-- CARDS -->
+    <div class="cards">
+        <div class="card">
+            <p>Total usuarios activos</p>
+            <h2>2</h2>
+        </div>
 
-    <!-- BOTONES DE SIMULACIÓN -->
+        <div class="card">
+            <p>Visitantes hoy</p>
+            <h2 id="contador">0</h2>
+        </div>
+
+        <div class="card">
+            <p>Alertas</p>
+            <h2>0</h2>
+        </div>
+    </div>
+
+    <!-- BOTONES -->
     <div class="botones">
         <button onclick="simularAcceso(1, 'QR')">QR Usuario 1</button>
         <button onclick="simularAcceso(2, 'Huella')">Huella Usuario 2</button>
         <button onclick="simularAcceso(1, 'Tarjeta')">Tarjeta Usuario 1</button>
     </div>
 
-    <!-- LOGS -->
-    <h2>Registros</h2>
-    <ul id="logs"></ul>
+    <!-- TABLA -->
+    <div class="tabla-container">
+        <h2>Acceso en vivo</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Método</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="logs"></tbody>
+        </table>
+    </div>
 
 </div>
 
 <script>
 
-// 🔹 Simular acceso
 async function simularAcceso(usuario_id, metodo) {
     await fetch("/acceso", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
+        headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
             usuario_id: usuario_id,
             metodo: metodo
@@ -42,27 +75,32 @@ async function simularAcceso(usuario_id, metodo) {
     cargarLogs();
 }
 
-// 🔹 Cargar logs
 async function cargarLogs() {
     const res = await fetch("/logs");
     const data = await res.json();
 
-    const lista = document.getElementById("logs");
-    lista.innerHTML = "";
+    const tabla = document.getElementById("logs");
+    tabla.innerHTML = "";
+
+    document.getElementById("contador").textContent = data.length;
 
     data.forEach(log => {
-        const item = document.createElement("li");
+        const row = document.createElement("tr");
 
-        item.textContent =
-            "Usuario " + log.usuario_id +
-            " | Método: " + log.metodo +
-            " | Estado: " + log.estado;
+        // 🔥 AQUÍ ESTÁ LA CLAVE DEL VERDE/ROJO
+        let claseEstado = log.estado === "activo" ? "badge activo" : "badge inactivo";
+        let textoEstado = log.estado === "activo" ? "ACTIVO" : "INACTIVO";
 
-        lista.appendChild(item);
+        row.innerHTML = `
+            <td>Usuario ${log.usuario_id}</td>
+            <td>${log.metodo}</td>
+            <td><span class="${claseEstado}">${textoEstado}</span></td>
+        `;
+
+        tabla.appendChild(row);
     });
 }
 
-// 🔹 Refresca cada 2 segundos
 setInterval(cargarLogs, 2000);
 
 </script>
