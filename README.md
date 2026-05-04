@@ -1,7 +1,7 @@
 # SeguriX
 
 ## Logo de SeguriX
-<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/4917e1f9-e6be-4ad6-a144-f115df95885f" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/4917e1f9-e6be-4ad6-a144-f115df95885f" />
 
 ## Descripción
 **SeguriX** es una plataforma centralizada diseñada para la administración de seguridad en edificios corporativos y residenciales.  
@@ -41,17 +41,17 @@ En este proyecto Flask se encarga de:
 
 
 ## Paleta de colores utilizada
-<img width="889" height="268" alt="image" src="https://github.com/user-attachments/assets/a4cf1b00-bc65-493e-9e13-49d9c1d88889" />
+<img width="700" height="240" alt="image" src="https://github.com/user-attachments/assets/a4cf1b00-bc65-493e-9e13-49d9c1d88889" />
 
 
 
 ## Kit tecnológico utilizado
-<img width="551" height="339" alt="image" src="https://github.com/user-attachments/assets/5ea8f750-c54a-4a89-834f-3c61db45de1c" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5ea8f750-c54a-4a89-834f-3c61db45de1c" />
 
 
 
 ## **Diagrama UML**
-<img width="1213" height="812" alt="imagen_2026-04-27_150646923" src="https://github.com/user-attachments/assets/fa0b88f9-fc81-40f2-b40d-5ff785529d89" />
+<img width="1200" height="800" alt="imagen_2026-04-27_150646923" src="https://github.com/user-attachments/assets/fa0b88f9-fc81-40f2-b40d-5ff785529d89" />
 
 
 ## ▶️ Ejecución
